@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>BookLibrary</RootNamespace>
+    <AssemblyName>BookLibrary</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Предупреждение NU1903: native SQLite в Microsoft.Data.Sqlite 10.x още няма пачната версия.
+         Приложението отваря само собствения си локален файл library.db, затова е безопасно за учебен проект. -->
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-2m69-gcr7-jv3q" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>
